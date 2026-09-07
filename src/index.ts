@@ -2,7 +2,7 @@
 /**
  * pinterest-mcp-server — a Model Context Protocol server for the Pinterest API v5.
  *
- *   PINTEREST_ACCESS_TOKEN=... npx @nasdigital/pinterest-mcp
+ *   PINTEREST_ACCESS_TOKEN=... npx @nasdigitaluk/pinterest-mcp
  *
  * Configuration:
  *   PINTEREST_ACCESS_TOKEN   required. An OAuth2 access token for your app.
@@ -28,7 +28,7 @@ import {
   authorizerFromEnv,
   requireEnv,
   runServer,
-} from "@nasdigital/mcp-server-core";
+} from "@nasdigitaluk/mcp-server-core";
 import { buildTools } from "./tools.js";
 import { COVERED } from "./dispatch.js";
 import { OPERATIONS } from "./generated/operations.js";
