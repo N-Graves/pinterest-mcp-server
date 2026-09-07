@@ -6,7 +6,7 @@ import {
   checkCoverage,
   formatCoverage,
   operationsFromOpenApi,
-} from "@nasdigital/mcp-server-core";
+} from "@nasdigitaluk/mcp-server-core";
 import { OPERATIONS } from "../src/generated/operations.js";
 import { createDispatcher, COVERED } from "../src/dispatch.js";
 import { buildTools } from "../src/tools.js";

@@ -20,7 +20,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { buildCatalogue, renderCatalogue, reportBuild } from "@nasdigital/mcp-server-core/generate";
+import { buildCatalogue, renderCatalogue, reportBuild } from "@nasdigitaluk/mcp-server-core/generate";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const spec = JSON.parse(readFileSync(join(ROOT, "vendor/pinterest-openapi.json"), "utf8"));
