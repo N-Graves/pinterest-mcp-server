@@ -1,6 +1,6 @@
 {
   "name": "@nasdigitaluk/pinterest-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -8,7 +8,8 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "pinterest-mcp": "dist/index.js"
+    "pinterest-mcp": "dist/index.js",
+    "pinterest-mcp-auth": "dist/auth-cli.js"
   },
   "files": [
     "dist",
@@ -20,7 +21,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsc && chmod +x dist/index.js",
+    "build": "tsc && chmod +x dist/index.js dist/auth-cli.js",
     "generate": "node scripts/generate-operations.mjs",
     "start": "node dist/index.js",
     "test": "vitest run",
