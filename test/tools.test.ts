@@ -47,6 +47,18 @@ describe("the advertised surface", () => {
   });
 });
 
+describe("empty responses", () => {
+  it("turns a 204 delete into a result instead of undefined", async () => {
+    const http = new HttpClient({
+      baseUrl: "https://api.pinterest.com/v5",
+      fetchImpl: (async () => new Response(null, { status: 204 })) as unknown as typeof fetch,
+    });
+    expect(await run(http, "pinterest_call", { operation_id: "boards/delete", params: { board_id: "1" } })).toEqual({
+      ok: true,
+    });
+  });
+});
+
 describe("creating image pins", () => {
   it("takes exactly one of image_url, image_path or images", () => {
     const t = tool(client().http, "pinterest_create_pin");

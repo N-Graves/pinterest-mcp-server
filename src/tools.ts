@@ -305,5 +305,11 @@ export function buildTools(
     },
   ];
 
-  return tools.map((t) => ({ ...t, handler: withPinterestErrors(t.handler) }));
+  // Deletes answer 204 with no body. Returned as-is that is `undefined`, which
+  // is not a valid MCP result: the delete happened and the caller got a
+  // protocol error. Found by the live round-trip, deleting its own board.
+  return tools.map((t) => {
+    const run = withPinterestErrors(t.handler);
+    return { ...t, handler: async (args: unknown) => (await run(args)) ?? { ok: true } };
+  });
 }
